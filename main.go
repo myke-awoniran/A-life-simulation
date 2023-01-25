@@ -5,7 +5,5 @@ package main
 // }
 
 func main() {
-	// var a string
-	a := "micheal is coming home"
-	println(a)
+	println("oh Lord, I want a coupe")
 }
