@@ -2,6 +2,7 @@ package main
 
 import (
 	"image/color"
+	"log"
 
 	"github.com/hajimehoshi/ebiten/v2"
 )
@@ -26,9 +27,14 @@ func (g *Game) update() error {
 }
 
 func (g *Game) Draw(screen *ebiten.Image) {
-
+	for _, boid := range boids {
+		screen.set(int(boid.position.x+1), int(boid.position.y), green)
+		screen.set(int(boid.position.x-1), int(boid.position.y-1), green)
+	}
 }
 
 func main() {
-	println("oh Lord, I want a coupe")
+	if err := ebiten.RunGame(&Game{}); err != nil {
+		log.Fatal(err)
+	}
 }
