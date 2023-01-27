@@ -3,12 +3,10 @@ package main
 import (
 	"image/color"
 
+	"log"
+
 	"github.com/hajimehoshi/ebiten/v2"
 )
-
-// func greet() string {
-// 	fmt.println("everything is working as expected")
-// }
 
 const (
 	screenWidth, screenHeight = 640, 360
@@ -19,6 +17,7 @@ var (
 )
 
 type Game struct {
+	//
 }
 
 func (g *Game) update() error {
@@ -33,7 +32,7 @@ func (g *Game) Draw(screen *ebiten.Image) {
 }
 
 func main() {
-	// if err := ebiten.RunGame(&Game{}); err != nil {
-	// 	log.Fatal(err)
-	// }
+	if err := ebiten.RunGame(&Game{}); err != nil {
+		log.Fatal(err)
+	}
 }
