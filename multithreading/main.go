@@ -7,13 +7,13 @@ import (
 )
 
 const (
-	screenWidth, screenHeight = 640, 360
+	screenWidth, screenHeight = 600, 600
 	boidCount                 = 500
 )
 
 var (
-	green = color.RGBA{10, 255, 50, 255}
-	boids = [boidCount]*Boid{}
+	green = color.RGBA{R: 10, G: 255, B: 50, A: 255}
+	boids [boidCount]*Boid
 )
 
 type Game struct {
@@ -44,8 +44,9 @@ func main() {
 	}
 	ebiten.SetWindowSize(screenWidth*2, screenHeight)
 	ebiten.SetWindowTitle("Boids in a box")
+	err := ebiten.RunGame(&Game{})
 
-	if err := ebiten.RunGame(&Game{}); err != nil {
+	if err != nil {
 		log.Fatal(err)
 	}
 }
