@@ -39,6 +39,5 @@ func createBoid(boidId int) {
 	}
 
 	boids[boidId] = &boid
-
 	go boid.Start()
 }

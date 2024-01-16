@@ -35,7 +35,7 @@ func (vector Vector2D) Limit(lower, uppper float64) Vector2D {
 	return Vector2D{math.Min(math.Max(vector.x, lower), uppper), math.Min(math.Max(vector.y, lower), uppper)}
 }
 
-func (vector1 Vector2D) Distanc(vector2 Vector2D) float64 {
+func (vector1 Vector2D) Distance(vector2 Vector2D) float64 {
 	distance := math.Sqrt(math.Pow(vector1.x-vector2.x, 2) + math.Pow(vector1.y-vector2.y, 2))
 	return distance
 }
